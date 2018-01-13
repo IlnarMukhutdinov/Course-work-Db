@@ -23,5 +23,28 @@ namespace DataBase_Course_Work
         {
             InitializeComponent();
         }
+
+        private void BtnCreateDeffaultDb_Click(object sender, RoutedEventArgs e)
+        {
+            BtnCreateDeffaultDb.IsEnabled = false;
+            BtnClearDb.IsEnabled = true;
+            MenuLabel.Visibility = Visibility.Visible;
+            Menu.Visibility = Visibility.Visible;
+
+            CourtCase courtCase = new CourtCase();
+            Employee employee = new Employee();
+            Protocol protocol = new Protocol();
+            CaseMaterial caseMaterial = new CaseMaterial();
+            Plaintiff plaintiff = new Plaintiff();
+            Defendant defendant = new Defendant();
+
+            defendant.FirstName = "Вино";
+            defendant.BirthDay = DateTime.Now;
+            Context context = new Context();
+            
+            context.Defendants.Add(defendant);
+            
+            context.SaveChanges();
+        }
     }
 }

@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="0" ShowsPreview="False" Width="1"
+                      HorizontalAlignment="Right" VerticalAlignment="Stretch"
+                      IsEnabled="False"
+                      Background="Black"/>
+
+
+        <TextBlock Grid.Column="0" Name="MenuLabel" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,5,0,0" TextDecorations="Underline" FontWeight="Bold" Cursor="Hand" Visibility="Hidden">Изменить базу данных</TextBlock>
+        <ListBox Grid.Column="0" Name="Menu" BorderBrush="White" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0" Visibility="Hidden">
+            <ListBoxItem x:Name="ItemCourtCase" Content="Судебное дело"/>
+            <ListBoxItem x:Name="ItemEmployee" Content="Сотрудники"/>
+            <ListBoxItem x:Name="Protocol" Content="Протокол заседания"/>
+            <ListBoxItem x:Name="MaterialsCase" Content="Материалы дела"/>
+            <ListBoxItem x:Name="Plaintiff" Content="Истец"/>
+            <ListBoxItem x:Name="Defendant" Content="Ответчик"/>
+        </ListBox>
+        <Button Grid.Column="0" x:Name="BtnClearDb" Content="Удалить базу данных" Margin="0,50,0,0" Height="30" IsEnabled="False" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="0" x:Name="BtnCreateDeffaultDb" Content="Создать БД по умполчанию" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Center" Height="30" Width="160" Click="BtnCreateDeffaultDb_Click"/>
+
     </Grid>
 </Window>
