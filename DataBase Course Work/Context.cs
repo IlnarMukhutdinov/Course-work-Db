@@ -22,9 +22,9 @@ namespace DataBase_Course_Work
 
         public DbSet<Defendant> Defendants { get; set; }
 
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CourtCase>().Property(c => c.StartDateTime).IsRequired();
+            /*modelBuilder.Entity<CourtCase>().Property(c => c.StartDateTime).IsRequired();
 
             modelBuilder.Entity<CourtCase>().Property(c => c.EndDateTime).IsOptional();
 
@@ -59,6 +59,7 @@ namespace DataBase_Course_Work
             modelBuilder.Entity<Defendant>().Property(c => c.PasportSeries).IsRequired();
 
             modelBuilder.Entity<Defendant>().Property(c => c.PasportNum).IsRequired();
-        }*/
+            */
+        }
     }
 }
