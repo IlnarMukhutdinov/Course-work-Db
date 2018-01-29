@@ -8,7 +8,7 @@
         Title="MainWindow" 
         Height="600"
         Width="1100"
-        Closing="Window_Closing">
+        Closing="Window_Closing" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -53,19 +53,19 @@
                          />
             <ListBoxItem x:Name="ItemProtocol" 
                          Content="Протокол заседания" 
-                         Selected="Protocol_Selected"
+                         Selected="ItemProtocol_Selected"
                          />
             <ListBoxItem x:Name="ItemCaseMaterials" 
                          Content="Материалы дела" 
-                         Selected="CaseMaterials_Selected"
+                         Selected="ItemCaseMaterials_Selected"
                          />
             <ListBoxItem x:Name="ItemPlaintiff" 
                          Content="Истец" 
-                         Selected="Plaintiff_Selected"
+                         Selected="ItemPlaintiff_Selected"
                          />
             <ListBoxItem x:Name="ItemDefendant" 
                          Content="Ответчик" 
-                         Selected="Defendant_Selected"
+                         Selected="ItemDefendant_Selected"
                          />
         </ListBox>
         <TextBlock Grid.Column="0" 
@@ -125,18 +125,20 @@
                       VerticalAlignment="Stretch" 
                       HorizontalAlignment="Stretch"
                       AutoGeneratingColumn="MainGrid_OnAutoGeneratingColumn"
+                      CanUserAddRows="False"
+                      RowHeight="30"
                       />
-            <Button Grid.Row="1" x:Name="btn_UpdateDB" 
-                FontSize="13" 
-                Margin="0,0,0,100" 
-                Padding="15,0" 
-                Click="btn_UpdateDB_Click" 
-                Content="Обновить и сохранить изменения" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                Height="40" 
-                Width="240" 
-                />
+            <Button Grid.Row="1" x:Name="BtnUpdateDb" 
+                    FontSize="13" 
+                    Margin="0,0,0,100" 
+                    Padding="15,0" 
+                    Click="BtnUpdateDB_Click" 
+                    Content="Обновить и сохранить изменения" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Height="40" 
+                    Width="240" 
+                    />
         </Grid>
         <TextBlock Grid.Column="0" 
                    Name="DbFindLabel" 
@@ -179,5 +181,14 @@
                          Selected="ItemFindPlaintiffByPasport_Selected"
                          />
         </ListBox>
+        <Button x:Name="BtnFillDefaultInfo" Grid.Column="0"
+                Content="Заполнить таблицы по умолчанию (отладка)" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Height="30"
+                Width="250" 
+                Margin="20, 10"
+                ToolTip="Заполняет таблицы данными по умолчанию. Данные описаны в классе DefaultInfoDb" Click="BtnFillDefaultInfo_Click"
+                />
     </Grid>
 </Window>
