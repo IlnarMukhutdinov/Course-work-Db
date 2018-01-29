@@ -8,9 +8,18 @@
         Title="FindEmployeeBySecondName" Height="120" Width="300">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Label HorizontalAlignment="Center">Введите фамилию сотрудника</Label>
-            <TextBox x:Name="Condition" BorderBrush="Black" Width="100"></TextBox>
-            <Button Content="Найти" Width="100" Margin="10" Click="Button_Click"></Button>
+            <Label HorizontalAlignment="Center">
+                Введите фамилию сотрудника
+            </Label>
+            <TextBox x:Name="Condition" 
+                     BorderBrush="Black" 
+                     Width="100"
+                     />
+            <Button Content="Найти" 
+                    Width="100" 
+                    Margin="10" 
+                    Click="Button_Click"
+                    />
         </StackPanel>
     </Grid>
 </Window>
