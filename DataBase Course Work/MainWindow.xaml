@@ -5,50 +5,128 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1100" Closing="Window_Closing">
+        Title="MainWindow" 
+        Height="600"
+        Width="1100"
+        Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <GridSplitter Grid.Column="1" ShowsPreview="False" Width="1"
-                      HorizontalAlignment="Right" VerticalAlignment="Stretch"
+        <GridSplitter Grid.Column="1" 
+                      ShowsPreview="False" 
+                      Width="1"
+                      HorizontalAlignment="Right" 
+                      VerticalAlignment="Stretch"
                       IsEnabled="False"
-                      Background="Black"/>
+                      Background="Black"
+                      />
 
-        <TextBlock Grid.Column="0" Name="MenuLabel" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                   Margin="20,5,0,0" TextDecorations="Underline" FontWeight="Bold" Grid.ColumnSpan="2">
+        <TextBlock Grid.Column="0" 
+                   Name="MenuLabel" 
+                   FontSize="14" HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   Margin="20,5,0,0" 
+                   TextDecorations="Underline" 
+                   FontWeight="Bold" Grid.ColumnSpan="2"
+                   >
             Выберите базу данных для редактирования
         </TextBlock>
-        <ListBox Grid.Column="0" Name="Menu" BorderBrush="Black" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,30,0,0" Width="261" Grid.ColumnSpan="2">
-            <ListBoxItem x:Name="ItemCourtCase" Content="Судебное дело" Selected="ItemCourtCase_Selected"/>
-            <ListBoxItem x:Name="ItemEmployee" Content="Сотрудники" Selected="ItemEmployee_Selected"/>
-            <ListBoxItem x:Name="ItemProtocol" Content="Протокол заседания" Selected="Protocol_Selected"/>
-            <ListBoxItem x:Name="ItemCaseMaterials" Content="Материалы дела" Selected="CaseMaterials_Selected"/>
-            <ListBoxItem x:Name="ItemPlaintiff" Content="Истец" Selected="Plaintiff_Selected"/>
-            <ListBoxItem x:Name="ItemDefendant" Content="Ответчик" Selected="Defendant_Selected"/>
+        <ListBox Grid.Column="0" Name="Menu" 
+                 BorderBrush="Black" 
+                 FontSize="14" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="20,30,0,0" 
+                 Width="261"
+                 Grid.ColumnSpan="2"
+                 >
+            <ListBoxItem x:Name="ItemCourtCase" 
+                         Content="Судебное дело" 
+                         Selected="ItemCourtCase_Selected"
+                         />
+            <ListBoxItem x:Name="ItemEmployee" 
+                         Content="Сотрудники" 
+                         Selected="ItemEmployee_Selected"
+                         />
+            <ListBoxItem x:Name="ItemProtocol" 
+                         Content="Протокол заседания" 
+                         Selected="Protocol_Selected"
+                         />
+            <ListBoxItem x:Name="ItemCaseMaterials" 
+                         Content="Материалы дела" 
+                         Selected="CaseMaterials_Selected"
+                         />
+            <ListBoxItem x:Name="ItemPlaintiff" 
+                         Content="Истец" 
+                         Selected="Plaintiff_Selected"
+                         />
+            <ListBoxItem x:Name="ItemDefendant" 
+                         Content="Ответчик" 
+                         Selected="Defendant_Selected"
+                         />
         </ListBox>
-        <TextBlock Grid.Column="0" Name="DbDeleteLabel" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                   Margin="20,180,0,360" TextDecorations="Underline" FontWeight="Bold" Height="30">
+        <TextBlock Grid.Column="0" 
+                   Name="DbDeleteLabel" 
+                   FontSize="14" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" 
+                   Margin="20,180,0,360" 
+                   TextDecorations="Underline" 
+                   FontWeight="Bold" 
+                   Height="30"
+                   >
             Выберите таблицу для удаления данных
         </TextBlock>
-        <ListBox Grid.Column="0" Name="DbDelete" BorderBrush="Black" FontSize="14" Margin="20,214,0,213" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2">
-            <ListBoxItem x:Name="ItemCourtCaseDelete" Content="Удалить таблицу Судебное дело" Selected="ItemCourtCaseDelete_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemEmployeeDelete" Content="Удалить таблицу Сотрудники" Selected="ItemEmployeeDelete_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemProtocolDelete" Content="Удалить таблицу Протокол заседанию" Selected="ItemProtocolDelete_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemCaseMaterialsDelete" Content="Удалить таблицу Материалы дела" Selected="ItemCaseMaterialsDelete_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemPlaintiffDelete" Content="Удалить таблицу Истец" Selected="ItemPlaintiffDelete_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemDefendantDelete" Content="Удалить таблицу Ответчик" Selected="ItemDefendantDelete_Selected"></ListBoxItem>
+        <ListBox Name="DbDelete"
+                 Grid.Column="0"  
+                 BorderBrush="Black" 
+                 FontSize="14" 
+                 Margin="20,214,0,213" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Left" 
+                 Grid.ColumnSpan="2"
+                 >
+            <ListBoxItem x:Name="ItemCourtCaseDelete" 
+                         Content="Удалить таблицу Судебное дело" 
+                         Selected="ItemCourtCaseDelete_Selected"
+                         />
+            <ListBoxItem x:Name="ItemEmployeeDelete" 
+                         Content="Удалить таблицу Сотрудники" 
+                         Selected="ItemEmployeeDelete_Selected"
+                         />
+            <ListBoxItem x:Name="ItemProtocolDelete" 
+                         Content="Удалить таблицу Протокол заседанию" 
+                         Selected="ItemProtocolDelete_Selected"
+                         />
+            <ListBoxItem x:Name="ItemCaseMaterialsDelete" 
+                         Content="Удалить таблицу Материалы дела" 
+                         Selected="ItemCaseMaterialsDelete_Selected"
+                         />
+            <ListBoxItem x:Name="ItemPlaintiffDelete" 
+                         Content="Удалить таблицу Истец" 
+                         Selected="ItemPlaintiffDelete_Selected"
+                         />
+            <ListBoxItem x:Name="ItemDefendantDelete" 
+                         Content="Удалить таблицу Ответчик" 
+                         Selected="ItemDefendantDelete_Selected"
+                         />
         </ListBox>
         <Grid Grid.Column ="1">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <DataGrid x:Name="MainGrid" Grid.Row="0" Margin="15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <Button Grid.Row="1" 
-                x:Name="btn_UpdateDB" 
+            <DataGrid x:Name="MainGrid" 
+                      Grid.Row="0" 
+                      Margin="15" 
+                      VerticalAlignment="Stretch" 
+                      HorizontalAlignment="Stretch"
+                      AutoGeneratingColumn="MainGrid_OnAutoGeneratingColumn"
+                      />
+            <Button Grid.Row="1" x:Name="btn_UpdateDB" 
                 FontSize="13" 
                 Margin="0,0,0,100" 
                 Padding="15,0" 
@@ -57,24 +135,49 @@
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center" 
                 Height="40" 
-                Width="240" />
+                Width="240" 
+                />
         </Grid>
-        <TextBlock Grid.Column="0" Name="DbFindLabel" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                   Margin="20,0,0,180" TextDecorations="Underline" FontWeight="Bold">
+        <TextBlock Grid.Column="0" 
+                   Name="DbFindLabel" 
+                   FontSize="14" 
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom" 
+                   Margin="20,0,0,180" 
+                   TextDecorations="Underline" 
+                   FontWeight="Bold"
+                   >
             Выберите тип поиска
         </TextBlock>
         <ListBox Grid.Column="0" 
                  x:Name="DbFind" 
                  BorderBrush="Black" 
-                 FontSize="14" HorizontalAlignment="Left" 
+                 FontSize="14" 
+                 HorizontalAlignment="Left" 
                  VerticalAlignment="Bottom" 
                  Margin="20,0,0,50" 
-                 Width="260">
-            <ListBoxItem x:Name="ItemFindCaseByDate" Content="Поиск дела по дате" Selected="ItemFindCaseByDate_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemFindCaseByDecision" Content="Поиск дела по решению" Selected="ItemFindCaseByDecision_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemFindEmployeeBySecondName" Content="Поиск сотрудника по фамилии" Selected="ItemFindEmployeeBySecondName_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemFindDefendantByPasport" Content="Поиск ответчика по паспорту" Selected="ItemFindDefendantByPasport_Selected"></ListBoxItem>
-            <ListBoxItem x:Name="ItemFindPlaintiffByPasport" Content="Поиск истца по паспорту" Selected="ItemFindPlaintiffByPasport_Selected"></ListBoxItem>
+                 Width="260"
+                 >
+            <ListBoxItem x:Name="ItemFindCaseByDate"
+                         Content="Поиск дела по дате" 
+                         Selected="ItemFindCaseByDate_Selected"
+                         />
+            <ListBoxItem x:Name="ItemFindCaseByDecision" 
+                         Content="Поиск дела по решению" 
+                         Selected="ItemFindCaseByDecision_Selected"
+                         />
+            <ListBoxItem x:Name="ItemFindEmployeeBySecondName" 
+                         Content="Поиск сотрудника по фамилии" 
+                         Selected="ItemFindEmployeeBySecondName_Selected"
+                         />
+            <ListBoxItem x:Name="ItemFindDefendantByPasport" 
+                         Content="Поиск ответчика по паспорту"
+                         Selected="ItemFindDefendantByPasport_Selected"
+                         />
+            <ListBoxItem x:Name="ItemFindPlaintiffByPasport" 
+                         Content="Поиск истца по паспорту" 
+                         Selected="ItemFindPlaintiffByPasport_Selected"
+                         />
         </ListBox>
     </Grid>
 </Window>

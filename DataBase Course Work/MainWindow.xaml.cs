@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -220,6 +221,35 @@ namespace DataBase_Course_Work
         public void UpdatePlaintiffDataGrid(Context db)
         {
             MainGrid.ItemsSource = db.Plaintiffs.Local.ToBindingList();
+        }
+
+        private void MainGrid_OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            var displayName = GetPropertyDisplayName(e.PropertyDescriptor);
+            if (!string.IsNullOrEmpty(displayName) && displayName != "none")
+            {
+                e.Column.Header = displayName;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private string GetPropertyDisplayName(object ePropertyDescriptor)
+        {
+            if (ePropertyDescriptor is PropertyDescriptor pd)
+            {
+                if (pd.Attributes[typeof(DisplayNameAttribute)] is DisplayNameAttribute displayName && displayName != DisplayNameAttribute.Default)
+                {
+                    return displayName.DisplayName;
+                }
+                if (pd.Attributes[typeof(DesignOnlyAttribute)] is DesignOnlyAttribute designOnly && designOnly.IsDesignOnly)
+                {
+                    return "none";
+                }
+            }
+            return null;
         }
     }
 }
