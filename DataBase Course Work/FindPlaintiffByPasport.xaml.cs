@@ -24,19 +24,30 @@ namespace DataBase_Course_Work
         public FindPlaintiffByPasport()
         {
             InitializeComponent();
-            PasportSeries.Text = "0";
-            PasportNum.Text = "0";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int series = int.Parse(PasportSeries.Text);
-            int num = int.Parse(PasportNum.Text);
+            MainWindow mw = Owner as MainWindow;
+            int series, num;
+            try
+            {
+                series = int.Parse(PasportSeries.Text);
+                num = int.Parse(PasportNum.Text);
 
-            db.Plaintiffs.Where(d => d.PasportSeries == series && d.PasportNum == num).Load();
-            MainWindow mw = new MainWindow { MainGrid = { ItemsSource = db.Plaintiffs.Local.ToBindingList() } };
-            mw.Show();
-            Close();
+                db.Plaintiffs.Where(d => d.PasportSeries == series && d.PasportNum == num).Load();
+                mw.UpdatePlaintiffDataGrid(db);
+                Close();
+            }
+            catch (FormatException)
+            {
+                new TryAgainWindow().Show();
+            }
+            catch (NullReferenceException)
+            {
+                new TryAgainWindow().Show();
+            }
+
         }
     }
 }

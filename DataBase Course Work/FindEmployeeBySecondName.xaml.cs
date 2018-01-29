@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 
@@ -18,10 +19,17 @@ namespace DataBase_Course_Work
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            db.Employees.Where(c => c.SecondName == Condition.Text).Load();
-            MainWindow mw = new MainWindow { MainGrid = { ItemsSource = db.Employees.Local.ToBindingList() } };
-            mw.Show();
-            Close();
+            try
+            {
+                MainWindow mw = Owner as MainWindow;
+                db.Employees.Where(c => c.SecondName == Condition.Text).Load();
+                mw.UpdateEmployeeDataGrid(db);
+                Close();
+            }
+            catch (NullReferenceException)
+            {
+                new TryAgainWindow().Show();
+            }
         }
     }
 }

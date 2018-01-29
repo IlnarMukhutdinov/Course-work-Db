@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
 
 namespace DataBase_Course_Work
 {
@@ -13,20 +10,27 @@ namespace DataBase_Course_Work
         public DateTime StartDateTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
-        
 
         public int EmployeeId { get; set; }
+
         public int ProtocolId { get; set; }
+
         public int PlaintiffId { get; set; }
+
         public int CaseMaterialId { get; set; }
+
         public int DefendantId { get; set; }
 
         public string Decision { get; set; }
 
         public Employee Employee { get; set; }
+
         public Protocol Protocol { get; set; }
+
         public Plaintiff Plaintiff { get; set; }
+
         public CaseMaterial CaseMaterial { get; set; }
+
         public Defendant Defendant { get; set; }
     }
 

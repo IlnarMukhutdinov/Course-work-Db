@@ -4,13 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace DataBase_Course_Work
 {
@@ -28,10 +22,18 @@ namespace DataBase_Course_Work
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            db.CourtCases.Where(c => c.Decision == Condition.Text).Load();
-            MainWindow mw = new MainWindow {MainGrid = {ItemsSource = db.CourtCases.Local.ToBindingList()}};
-            mw.Show();
-            Close();
+            MainWindow mw = Owner as MainWindow;
+            try
+            {
+                db.CourtCases.Where(c => c.Decision == Condition.Text).Load();
+                mw.UpdateCourtCaseDataGrid(db);
+                Close();
+            }
+            catch (NullReferenceException)
+            {
+                new TryAgainWindow().Show();
+            }
+
         }
     }
 }
