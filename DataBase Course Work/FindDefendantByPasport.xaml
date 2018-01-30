@@ -5,52 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="FindDefendantByPasport" Height="150" Width="340">
-    <Grid>
-        <StackPanel Orientation="Vertical">
+        Title="Поиск подсудимого по паспорту" Height="150" Width="340">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0">Введите серию паспорта</Label>
+            <Label Grid.Column="1">Введите номер паспорта</Label>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" 
+                     x:Name="PasportSeries" 
+                     />
+            <TextBox Grid.Column="1" 
+                     x:Name="PasportNum" 
+                     />
+        </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" 
-                       Margin="5" 
-                       HorizontalAlignment="Center">
-                    Введите серию паспорта
-                </Label>
-                <Label Grid.Column="1" 
-                       Margin="5" 
-                       HorizontalAlignment="Center">
-                    Введите номер паспорта
-                </Label>
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" 
-                         x:Name="PasportSeries" 
-                         BorderBrush="Black" 
-                         Width="100" 
-                         Margin="5" 
-                         HorizontalAlignment="Center"
-                         />
-                <TextBox Grid.Column="1" 
-                         x:Name="PasportNum" 
-                         BorderBrush="Black" 
-                         Width="130" 
-                         Margin="5" 
-                         HorizontalAlignment="Center"
-                         />
-            </Grid>
-
-            <Button 
-                Content="Найти" 
-                Width="100" 
-                Margin="10" 
-                Click="Button_Click"></Button>
-        </StackPanel>
-    </Grid>
+        <Button Content="Найти" 
+                Click="Button_Click"
+                />
+    </StackPanel>
 </Window>

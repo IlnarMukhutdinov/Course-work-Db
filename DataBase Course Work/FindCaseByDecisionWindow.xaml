@@ -5,19 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="FindCaseByDecisionWindow" Height="120" Width="270">
+        Title="Поиск дела по решению" Height="150" Width="270">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"></ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Label HorizontalAlignment="Center">
-                Введите решение судьи
-            </Label>
+            <Label>Введите решение судьи</Label>
             <TextBox x:Name="Condition" 
-                     BorderBrush="Black" 
-                     Width="100"
                      />
             <Button Content="Найти" 
-                    Width="100" 
-                    Margin="10" 
                     Click="Button_Click"
                     />
         </StackPanel>

@@ -27,7 +27,7 @@ namespace DataBase_Course_Work
         [DisplayName("ID Материалов")]
         public int CaseMaterialId { get; set; }
 
-        [DisplayName("ID Подозреваемого")]
+        [DisplayName("ID Подсудимого")]
         public int DefendantId { get; set; }
 
         [DisplayName("Решение судьи")]

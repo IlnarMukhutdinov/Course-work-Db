@@ -1,21 +1,16 @@
-﻿<Window x:Class="DataBase_Course_Work.FindEmployeeBySecondName"
+﻿<Window x:Class="DataBase_Course_Work.SuccessSaving"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="Поиск сотрудника по фамилии" Height="150" Width="300">
+        Title="" Height="150" Width="300" ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="Style.xaml"></ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <Label>Введите фамилию сотрудника</Label>
-            <TextBox x:Name="Condition"/>
-            <Button Content="Найти" 
-                    Click="Button_Click"
-                    />
-        </StackPanel>
-    </Grid>
+    <StackPanel Orientation="Vertical">
+        <Label>Данные успешно сохранены</Label>
+        <Button Content="Ок" Click="ButtonBase_OnClick"></Button>
+    </StackPanel>
 </Window>

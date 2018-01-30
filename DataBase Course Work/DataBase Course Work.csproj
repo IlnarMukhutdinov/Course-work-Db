@@ -72,10 +72,56 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewCaseMaterial.xaml.cs">
+      <DependentUpon>AddNewCaseMaterial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewCourtCase.xaml.cs">
+      <DependentUpon>AddNewCourtCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewDefendant.xaml.cs">
+      <DependentUpon>AddNewDefendant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewEmployee.xaml.cs">
+      <DependentUpon>AddNewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPlaintiff.xaml.cs">
+      <DependentUpon>AddNewPlaintiff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewProtocol.xaml.cs">
+      <DependentUpon>AddNewProtocol.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DefaultInfoInDb.cs" />
+    <Compile Include="StaticDataContext.cs" />
+    <Compile Include="SuccessSaving.xaml.cs">
+      <DependentUpon>SuccessSaving.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TryAgainWindow.xaml.cs">
       <DependentUpon>TryAgainWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddNewCaseMaterial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewCourtCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewDefendant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewPlaintiff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewProtocol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FindCaseByDecisionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +170,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuccessSaving.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TryAgainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

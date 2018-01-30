@@ -1,0 +1,52 @@
+﻿<Window x:Class="DataBase_Course_Work.AddNewPlaintiff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBase_Course_Work"
+        mc:Ignorable="d"
+        Title="Добавить потерпевшего" Height="450" Width="300">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <Label>Фамилия</Label>
+        <TextBox x:Name="TextBoxSecondName"/>
+        <Label>Имя</Label>
+        <TextBox x:Name="TextBoxFirstName"/>
+        <Label>Отчество</Label>
+        <TextBox x:Name="TextBoxLastName"/>
+        <Label>Дата рождения</Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0">Год</Label>
+            <Label Grid.Column="1">Месяц</Label>
+            <Label Grid.Column="2">День</Label>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Name="TextBoxYear"/>
+            <TextBox Grid.Column="1" Name="TextBoxMonth"/>
+            <TextBox Grid.Column="2" Name="TextBoxDay"/>
+        </Grid>
+        <Label>Серия паспорта</Label>
+        <TextBox x:Name="TextBoxPasportSeries"/>
+        <Label>Номер паспорта</Label>
+        <TextBox x:Name="TextBoxPasportNumber"/>
+        <Button Content="Добавить" 
+                x:Name="BtnAdd" 
+                HorizontalAlignment="Center"
+                Height="30"
+                Width="100"
+                Margin="0, 10" Click="BtnAdd_OnClick"
+        />
+    </StackPanel>
+</Window>

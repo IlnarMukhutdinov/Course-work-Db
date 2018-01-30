@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace DataBase_Course_Work
 {
-    public partial class FindCaseParams : Window
+    public partial class FindCaseParams
     {
-        private Context db = new Context();
-
         public FindCaseParams()
         {
             InitializeComponent();
@@ -19,17 +15,16 @@ namespace DataBase_Course_Work
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int year, month, day;
-            MainWindow mw = Owner as MainWindow;
             try
             {
-                year = int.Parse(TextBox_Year.Text);
-                month = int.Parse(TextBox_Month.Text);
-                day = int.Parse(TextBox_Day.Text);
-                db.CourtCases
+                year = int.Parse(TextBoxYear.Text);
+                month = int.Parse(TextBoxMonth.Text);
+                day = int.Parse(TextBoxDay.Text);
+                StaticDataContext.DataContext.CourtCases
                     .Where(c => c.StartDateTime.Year == year && c.StartDateTime.Month == month &&
                                 c.StartDateTime.Day == day)
                     .Load();
-                mw.UpdateCourtCaseDataGrid(db);
+                new MainWindow().UpdateCourtCaseDataGrid(StaticDataContext.DataContext);
                 Close();
             }
             catch (FormatException)

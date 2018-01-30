@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="TryAgainWindow" Height="150" Width="300">
+        Title="Ошибка" Height="150" Width="300">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"/>
+    </Window.Resources>
     <Grid>
-        <Label VerticalAlignment="Center" HorizontalAlignment="Center">Введены неверные данные</Label>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 60, 0, 0" Width="50" Click="Button_Click">Ок</Button>
+        <Label >Введены неверные данные</Label>
+        <Button Click="Button_Click">Ок</Button>
     </Grid>
 </Window>
