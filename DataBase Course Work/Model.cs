@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataBase_Course_Work
 {
@@ -33,19 +34,19 @@ namespace DataBase_Course_Work
         [DisplayName("Решение судьи")]
         public string Decision { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public Employee Employee { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public Protocol Protocol { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public Plaintiff Plaintiff { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public CaseMaterial CaseMaterial { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public Defendant Defendant { get; set; }
     }
 
@@ -72,7 +73,7 @@ namespace DataBase_Course_Work
         [DisplayName("Должность")]
         public string Post { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public List<CourtCase> CourtCases { get; set; }
     }
 
@@ -84,7 +85,7 @@ namespace DataBase_Course_Work
         [DisplayName("Данные")]
         public string Evidence { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public List<CourtCase> CourtCases { get; set; }
     }
 
@@ -102,7 +103,7 @@ namespace DataBase_Course_Work
         [DisplayName("Показания потерпевшего")]
         public string PlaintiffReadings { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public List<CourtCase> CourtCases { get; set; }
     }
 
@@ -129,7 +130,7 @@ namespace DataBase_Course_Work
         [DisplayName("Номер паспорта")]
         public int PasportNum { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public List<CourtCase> CourtCases { get; set; }
     }
 
@@ -156,7 +157,7 @@ namespace DataBase_Course_Work
         [DisplayName("Номер паспорта")]
         public int PasportNum { get; set; }
 
-        [DesignOnly(true)]
+        [NotMapped]
         public List<CourtCase> CourtCases { get; set; }
     }
 }

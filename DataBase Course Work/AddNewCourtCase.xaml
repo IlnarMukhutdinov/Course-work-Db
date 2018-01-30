@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Course_Work"
         mc:Ignorable="d"
-        Title="Добавить судебное дело" Height="550" Width="300">
+        Title="Добавить судебное дело" Height="600" Width="300">
     <Window.Resources>
         <ResourceDictionary Source="Style.xaml"/>
     </Window.Resources>
@@ -52,16 +52,18 @@
             <TextBox Grid.Column="1" x:Name="TextBoxEndMonth"/>
             <TextBox Grid.Column="2" x:Name="TextBoxEndDay"/>
         </Grid>
-        <Label>Судья</Label>
+        <Label>ID Судьи</Label>
         <ComboBox x:Name="ComboBoxJudge"/>
-        <Label>Потерпевший</Label>
+        <Label>ID Потерпевшего</Label>
         <ComboBox x:Name="ComboBoxPlaintiff"/>
-        <Label>Подсудимый</Label>
+        <Label>ID Подсудимого</Label>
         <ComboBox x:Name="ComboBoxDefendant"/>
         <Label>Номер протокола</Label>
         <ComboBox x:Name="ComboBoxProtocol"/>
         <Label>Номер материалов</Label>
         <ComboBox x:Name="ComboBoxCaseMaterials"/>
-        <Button Content="Добавить"/>
+        <Label>Решение судьи</Label>
+        <TextBox x:Name="TextBoxDecision"/>
+        <Button Content="Добавить" Click="ButtonBase_OnClick"/>
     </StackPanel>
 </Window>

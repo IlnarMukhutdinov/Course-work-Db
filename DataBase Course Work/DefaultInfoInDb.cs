@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DataBase_Course_Work
 {
     class DefaultInfoInDb
     {
-        public Context DataContext;
+        public Context DataContext = new Context();
 
         private CourtCase _courtCase;
 
@@ -83,9 +80,10 @@ namespace DataBase_Course_Work
 
         public Context CreateDefaultPlaintiff()
         {
+            Random rnd = new Random();
             for (int i = 0; i < 5; i++)
             {
-                Random rnd = new Random();
+                
                 _plaintiff = new Plaintiff
                 {
                     FirstName = _firstnames[rnd.Next(0, _firstnames.Length)],
@@ -130,7 +128,6 @@ namespace DataBase_Course_Work
             {
                 StartDateTime = new DateTime(2000, 5, 20),
                 EndDateTime = new DateTime(2000, 8, 14),
-                EmployeeId = 1,
                 Decision = "Оправдать"
             };            
             DataContext = new Context();
