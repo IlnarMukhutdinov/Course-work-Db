@@ -94,11 +94,11 @@
                              Selected="ItemFindEmployeeBySecondName_Selected"
                              />
                 <ListBoxItem x:Name="ItemFindDefendantByPasport" 
-                             Content="Поиск ответчика по паспорту"
+                             Content="Поиск подсудимого по паспорту"
                              Selected="ItemFindDefendantByPasport_Selected"
                              />
                 <ListBoxItem x:Name="ItemFindPlaintiffByPasport" 
-                             Content="Поиск истца по паспорту" 
+                             Content="Поиск потерпевшего по паспорту" 
                              Selected="ItemFindPlaintiffByPasport_Selected"
                              />
             </ListBox>
