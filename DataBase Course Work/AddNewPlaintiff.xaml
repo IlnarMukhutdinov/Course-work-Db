@@ -24,7 +24,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0">Год</Label>
-            <Label Grid.Column="1">Месяц</Label>
+            <Label Grid.Column="1">Месяц (цифрой)</Label>
             <Label Grid.Column="2">День</Label>
         </Grid>
         <Grid>
